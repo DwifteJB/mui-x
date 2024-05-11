@@ -16,7 +16,6 @@ import { gridPageCountSelector, gridPaginationModelSelector } from './gridPagina
 import {
   getPageCount,
   defaultPageSize,
-  throwIfPageSizeExceedsTheLimit,
   getDefaultGridPaginationModel,
   getValidPage,
 } from './gridPaginationUtils';
@@ -44,8 +43,6 @@ export const getDerivedPaginationModel = (
   if (validPage !== paginationModel.page) {
     paginationModel = { ...paginationModel, page: validPage };
   }
-
-  throwIfPageSizeExceedsTheLimit(paginationModel.pageSize, signature);
 
   return paginationModel;
 };

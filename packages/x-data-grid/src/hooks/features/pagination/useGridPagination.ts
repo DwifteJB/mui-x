@@ -4,7 +4,6 @@ import { DataGridProcessedProps } from '../../../models/props/DataGridProps';
 import { GridStateInitializer } from '../../utils/useGridInitializeState';
 
 import {
-  throwIfPageSizeExceedsTheLimit,
   getDefaultGridPaginationModel,
 } from './gridPaginationUtils';
 import { useGridPaginationModel } from './useGridPaginationModel';
@@ -27,7 +26,6 @@ export const paginationStateInitializer: GridStateInitializer<
     ...(props.paginationModel ?? props.initialState?.pagination?.paginationModel),
   };
 
-  throwIfPageSizeExceedsTheLimit(paginationModel.pageSize, props.signature);
 
   const rowCount = props.rowCount ?? props.initialState?.pagination?.rowCount;
   const meta = props.paginationMeta ?? props.initialState?.pagination?.meta ?? {};
