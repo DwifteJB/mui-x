@@ -1,5 +1,5 @@
 {
-  "name": "@mui/x-codemod",
+  "name": "@dwifte/x-codemod",
   "version": "7.0.0",
   "bin": "./codemod.js",
   "private": false,
